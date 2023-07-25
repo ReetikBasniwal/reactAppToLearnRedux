@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+// import { actions } from "./todoReducer";
 // import { ADD_NOTE, DELETE_NOTE } from "../actions/noteAction";
 
 const initialState = {
@@ -34,6 +35,7 @@ const noteSlice = createSlice({
 });
 
 export const noteReducer = noteSlice.reducer;
+export const noteActions = noteSlice.actions;
 // export function noteReducer(state = initialState, action) {
 //   switch (action.type) {
 //     case ADD_NOTE:
