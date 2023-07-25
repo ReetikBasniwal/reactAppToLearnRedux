@@ -1,0 +1,19 @@
+
+
+.noteList{
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+    border: 2px solid rgb(248, 249, 180);
+    padding: 5px;
+}
+
+.note-content{
+    width: 60%;
+}
+
+button{
+    height: fit-content;
+}
