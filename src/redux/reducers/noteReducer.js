@@ -6,11 +6,11 @@ const initialState = {
   notes: [
     {
       text: "Coding in morning is very important, You complete every task that you decided to complete to get the Job not a Job, you have to get a good JOB",
-      createdOn: new Date(),
+      createdOn: new Date().toISOString().split('T')[0],
     },
     {
       text: "Go to gym at evening or morning but exercise is very important, this body is given to us by lord and our duty to keep this working",
-      createdOn: new Date(),
+      createdOn: new Date().toISOString().split('T')[0],
     },
   ],
 };
@@ -23,7 +23,7 @@ const noteSlice = createSlice({
     addNote: (state, action) => {
       state.notes.push({
         text: action.payload,
-        createdOn: new Date(),
+        createdOn: new Date().toISOString().split('T')[0],
       });
     },
 
@@ -35,9 +35,11 @@ const noteSlice = createSlice({
 });
 
 export const noteReducer = noteSlice.reducer;
+
 export const noteActions = noteSlice.actions;
 
 export const noteSelector = (state) => state.noteReducer.notes;
+
 
 // export function noteReducer(state = initialState, action) {
 //   switch (action.type) {

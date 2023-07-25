@@ -13,7 +13,7 @@ function NoteList() {
       <ul>
         {notes.map((note, index) => (
           <li className='noteList' key={`note-id-${index}`}>
-            <p>{note.createdOn.toLocaleDateString()}</p>
+            <p>{note.createdOn}</p>
             <p className="note-content">{note.text}</p>
             <button className="btn btn-danger" onClick={() =>  dispatch(noteActions.deleteNote(index))}>Delete</button>
           </li>
