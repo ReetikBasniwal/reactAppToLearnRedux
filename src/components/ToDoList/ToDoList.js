@@ -1,11 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
 // import { toggleTodo } from "../../redux/actions/todoActions";
 import { actions } from "../../redux/reducers/todoReducer";
+import { todoSelector } from "../../redux/reducers/todoReducer";
 
 import "./ToDoList.css";
 
 function ToDoList() {
-  const todos = useSelector((state) => state.todoReducer.todos);
+  const todos = useSelector(todoSelector);
   const dispatch = useDispatch();
 
   return (
