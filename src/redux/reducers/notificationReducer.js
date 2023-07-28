@@ -26,22 +26,23 @@ const notificationSlice = createSlice({
   // }
   // -------------------------
   // CORRECT WAY
-  // extraReducers: (builder) => {
-  //     builder.addCase(todoActions.add, (state, action) => {
-  //         state.message = "Todo is created";
-  //     });
-  //     builder.addCase(noteActions.addNote, (state, action) => {
-  //         state.message = "Note is created";
-  //     })
-  // }
-  extraReducers: {
-    [todoActions.add]: (state, action) => {
-      state.message = "Todo is created";
-    },
-    [noteActions.addNote]: (state, action) => {
-      state.message = "Note is created";
-    },
-  },
+  extraReducers: (builder) => {
+      builder.addCase(todoActions.add, (state, action) => {
+          state.message = "Todo is created";
+      });
+      builder.addCase(noteActions.addNote, (state, action) => {
+          state.message = "Note is created";
+      })
+  }
+  // This is depricated
+  // extraReducers: {
+  //   [todoActions.add]: (state, action) => {
+  //     state.message = "Todo is created";
+  //   },
+  //   [noteActions.addNote]: (state, action) => {
+  //     state.message = "Note is created";
+  //   },
+  // },
 });
 
 export const notificationReducer = notificationSlice.reducer;

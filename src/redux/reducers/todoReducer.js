@@ -20,6 +20,7 @@ const todoSlice = createSlice({
         text: action.payload,
         completed: false,
       });
+      
     },
     // this is TOGGLE ACTION
     toggle: (state, action) => {
