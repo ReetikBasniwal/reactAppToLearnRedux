@@ -21,8 +21,9 @@ function ToDoList() {
     //   });
     axios.get("http://localhost:4100/api/todos").then((res) => {
       console.log(res.data);
+      dispatch(todoActions.setInitialState(res.data));
     });
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="container">
