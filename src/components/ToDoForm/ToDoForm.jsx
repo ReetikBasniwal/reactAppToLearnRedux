@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import { addTodo } from "../../redux/actions/todoActions";
-import { todoActions } from "../../redux/reducers/todoReducer";
+import { addTodoAsync } from "../../redux/reducers/todoReducer";
 import {
   notificationSelector,
   resetNotification,
@@ -22,7 +22,7 @@ function ToDoForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(todoActions.add(todoText));
+    dispatch(addTodoAsync(todoText));
     setTodoText("");
   };
 
