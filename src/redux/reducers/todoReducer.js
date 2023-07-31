@@ -1,9 +1,23 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 // import { ADD_TODO, TOGGLE_TODO } from "../actions/todoActions";
 
 const initialState = {
   todos: [],
 };
+
+export const getInitialStateAsync = createAsyncThunk(
+  "todo/getInitialState",
+   async (arg, thunkAPI) => {
+    //async calls
+    try {
+      const res = await axios.get("http://localhost:4100/api/todos")
+        thunkAPI.dispatch(todoActions.setInitialState(res.data));
+    }catch(error){
+      console.error('Error: ', error);
+    }
+   }
+)
 
 // REDUCER  USING REDUX TOOLKIT
 
@@ -20,7 +34,7 @@ const todoSlice = createSlice({
         text: action.payload,
         completed: false,
       });
-      
+
     },
     // this is TOGGLE ACTION
     toggle: (state, action) => {
